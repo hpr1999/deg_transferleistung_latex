@@ -1,0 +1,37 @@
+% Vorlage: Copyright 2015 Jan Hauke Maase
+
+\documentclass[titel2]{myNakLatex}
+
+\author{AUTOR}
+\authoraddress{STRASSE\\ ORT\\EMAIL}
+\gutachter{GUTACHTER}
+\gutachteraddress{STRASSE\\ ORT\\EMAIL}
+\title{TITEL}
+\untertitel{UNTERTITEL}
+\unteruntertitel{UNTERUNTERTITEL}
+
+%Literatur Einstellungen
+\usepackage[backend=bibtex, style=ieee]{biblatex}
+\ExecuteBibliographyOptions{sorting=nty}
+\addbibresource{literatur.bib}
+
+\begin{document}
+	
+	\begin{frontmatter}
+			\maketitle
+			\inhaltsverzeichnis{}
+			\abbildungsverzeichnis{}
+			\tabellenverzeichnis{}
+	\end{frontmatter}
+	
+	\begin{mainmatter}
+		\input{content/einleitung.tex}
+		\input{content/hauptteil.tex}
+	\end{mainmatter}
+	
+	\begin{backmatter}
+		\quellenverzeichnis{}
+		\eigenleistung{Elmshorn}
+	\end{backmatter}
+
+\end{document}
