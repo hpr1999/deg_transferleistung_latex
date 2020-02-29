@@ -8,7 +8,7 @@ Ich habe sie erfolgreich zum Verfassen von Transferleistungen genutzt.
 
 Getestet habe ich diese Vorlage
 
-- unter Linux mit TexLive.
+- unter Linux mit TexLive (``sudo apt-get install texlive texlive-lang-german texlive-latex-extra``)
 - mithilfe von <https://overleaf.com> (Empfehlung für Anfänger oder Gruppen)
 
 ## Build
