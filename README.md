@@ -28,15 +28,15 @@ Diese sind in der ``myNakLatex.cls`` zu finden und können dort dementsprechend 
 
 - Eigennamen:
 
-| Kommando          | Beschreibung                             |
-| ----------------- | ---------------------------------------- |
-| DEG               | Der formatierte Firmenname               |
-| eigenname         | Stellt Eigennamen dar. (kursiv)          |
-| profil            | "profil" als Eigenname                   |
-| pcs               | "profil c/s" als Eigenname               |
-| rdv               | "rdv" als Eigenname                      |
-| aiv               | "aiv" als Eigenname                      |
-| profident         | "profident" als Eigenname                |
-| profiltext        | Abkürzungserklärung von profil           |
-| eigeneDarstellung | Formatierter Text für eigene Abbildungen |
-| eigeneAuflistung  | Formatierter Text für eigene Tabellen    |
+| Kommando            | Beschreibung                             | Standardoutput                                                                                                 |
+| ------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| DEG                 | Der formatierte Firmenname               | **data experts**                                                                                               |
+| eigenname{Beispiel} | Stellt Eigennamen dar. (kursiv)          | *Beispiel*                                                                                                     |
+| profil              | "profil" als Eigenname                   | *profil*                                                                                                       |
+| pcs                 | "profil c/s" als Eigenname               | *profil c/s*                                                                                                   |
+| rdv                 | "rdv" als Eigenname                      | *rdv*                                                                                                          |
+| aiv                 | "aiv" als Eigenname                      | *aiv*                                                                                                          |
+| profident           | "profident" als Eigenname                | *profident*                                                                                                    |
+| profiltext          | Abkürzungserklärung von profil           | <i>**Pro**grammsystem zur rechnergestützten Verwaltung von **F**ördermitteln **I**n der **L**andwirtschaft</i> |
+| eigeneDarstellung   | Formatierter Text für eigene Abbildungen | *Eigene Darstellung*                                                                                           |
+| eigeneAuflistung    | Formatierter Text für eigene Tabellen    | *Eigene Auflistung*                                                                                            |
