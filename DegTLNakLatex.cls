@@ -16,12 +16,12 @@
 \RequirePackage{float}
 \RequirePackage{eurosym} % Euro Symbol
 \RequirePackage[parfill]{parskip} % Keine Einrückung bei neuen Absaetzen
-\RequirePackage[hidelinks]{hyperref} % für hyperlinks als ref
-\RequirePackage[all]{hypcap} % für hyperlinks als ref
 \RequirePackage{array} % Tabellen
 \RequirePackage{multirow} % Tabellen mit multirow Zellen
 \RequirePackage{listings} % Codelistings
 \RequirePackage[all]{nowidow} % Keine Waisen (einsame Zeile eines Absatzes auf der nächsten Seite)
+\RequirePackage[hidelinks]{hyperref} % für hyperlinks als ref
+\RequirePackage[all]{hypcap} % für hyperlinks als ref
 % Seitenränder
 \RequirePackage[left=4cm,right=2cm,top=2cm,bottom=2cm,includeheadfoot,headheight=50pt]{geometry}
 
@@ -119,26 +119,32 @@
 % QOL für Verzeichnisse
 \newcommand{\listingverzeichnis}{
 	\newpage
+	\phantomsection
 	\addcontentsline{toc}{section}{Listingverzeichnis}
 	\lstlistoflistings
 }
 
 \newcommand{\inhaltsverzeichnis}{
 	\newpage
+	\phantomsection
 	\addcontentsline{toc}{section}{Inhaltsverzeichnis}
 	\tableofcontents}
 
 \newcommand{\abbildungsverzeichnis}{
 	\newpage
+	\phantomsection
 	\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 	\listoffigures}
 
 \newcommand{\tabellenverzeichnis}{
 	\newpage
+	\phantomsection
 	\addcontentsline{toc}{section}{Tabellenverzeichnis}
 	\listoftables}
 
 \newcommand{\quellenverzeichnis}{
+	\newpage	
+	\phantomsection
 	\addcontentsline{toc}{section}{Literatur}
 	\printbibliography
 	}
