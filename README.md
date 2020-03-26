@@ -10,6 +10,7 @@ Getestet habe ich diese Vorlage
 
 - unter Linux mit TexLive (``sudo apt-get install texlive texlive-lang-german texlive-latex-extra``)
 - mithilfe von <https://overleaf.com> (Empfehlung für Anfänger oder Gruppen)
+- unter Windows mit MikTeX
 
 ## Build
 
@@ -24,7 +25,7 @@ Zum Bauen der PDF habe ich folgende Befehlskette genutzt:
 
 Die Vorlage enthält ein paar wenige deg-Kommandos, die nicht viel mehr tun, als einen einheitlichen Stil für Eigennamen zu vereinfachen.
 
-Diese sind in der ``myNakLatex.cls`` zu finden und können dort dementsprechend bearbeitet werden.
+Diese sind in der ``DegTLNakLatex.cls`` zu finden und können dort dementsprechend bearbeitet werden.
 
 - Eigennamen:
 
