@@ -11,7 +11,7 @@
 \RequirePackage[babel, german=quotes]{csquotes}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern} % Gerenderte Schrift
-\RequirePackage{graphicx}
+\RequirePackage{graphicx} % Graphiken, z.B. Tabellen o.ä.
 \RequirePackage{microtype}
 \RequirePackage{float}
 \RequirePackage{eurosym} % Euro Symbol
@@ -20,6 +20,8 @@
 \RequirePackage[all]{hypcap} % für hyperlinks als ref
 \RequirePackage{array} % Tabellen
 \RequirePackage{multirow} % Tabellen mit multirow Zellen
+\RequirePackage{listings} % Codelistings
+\RequirePackage[all]{nowidow} % Keine Waisen (einsame Zeile eines Absatzes auf der nächsten Seite)
 % Seitenränder
 \RequirePackage[left=4cm,right=2cm,top=2cm,bottom=2cm,includeheadfoot,headheight=50pt]{geometry}
 
@@ -53,6 +55,8 @@
         {\textquoteleft}
         {\textquoteright}
 
+% Listingstil
+\lstdefinestyle{java}{...} 
 % Variablendefinitionen
 
 \newcommand*{\matrikelnr}[1]{\gdef\@matrikelnr{#1}}
@@ -113,6 +117,12 @@
 	\setcounter{page}{\value{frontmatter}}}
 
 % QOL für Verzeichnisse
+\newcommand{\listingverzeichnis}{
+	\newpage
+	\addcontentsline{toc}{section}{Listingverzeichnis}
+	\lstlistoflistings
+}
+
 \newcommand{\inhaltsverzeichnis}{
 	\newpage
 	\addcontentsline{toc}{section}{Inhaltsverzeichnis}
