@@ -41,7 +41,7 @@
 \fancyhead[L]{\includegraphics[height=30pt]{image/data-experts-logo.png}} % Kopfzeile links
 \fancyhead[R]{\includegraphics[height=30pt]{image/transferleistung.jpg}} % Kopfzeile rechts
 \renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
-\fancyfoot[C]{\thepage} %Seitennummer
+\fancyfoot[C]{\hyperlink{toc}{\thepage}} %Seitennummer
 
 % Kapitel 4. Ebene
 \newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
@@ -126,6 +126,7 @@
 
 \newcommand{\inhaltsverzeichnis}{
 	\newpage
+	\hypertarget{toc}
 	\phantomsection
 	\addcontentsline{toc}{section}{Inhaltsverzeichnis}
 	\tableofcontents}
