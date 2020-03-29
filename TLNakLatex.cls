@@ -156,9 +156,8 @@
 
 \newcommand{\abkuerzungsverzeichnis}{
 	\newpage
-	\hypertarget{toc}
 	\phantomsection
-	\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+	\sectionX{Abkürzungsverzeichnis}
 	\input{content/acronyms.tex}
 }
 % Umgebungen
