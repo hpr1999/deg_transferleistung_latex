@@ -22,7 +22,7 @@
 \RequirePackage[all]{nowidow} % Keine Waisen (einsame Zeile eines Absatzes auf der nächsten Seite)
 \RequirePackage[hidelinks]{hyperref} % für hyperlinks als ref
 \RequirePackage[all]{hypcap} % für hyperlinks als ref
-\RequirePackage{acronym} % Abkürzungen
+\RequirePackage[printonlyused]{acronym} % Abkürzungen
 % Seitenränder
 \RequirePackage[left=4cm,right=2cm,top=2cm,bottom=2cm,includeheadfoot,headheight=50pt]{geometry}
 
