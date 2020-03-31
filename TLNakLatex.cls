@@ -24,7 +24,7 @@
 \RequirePackage[all]{hypcap} % für hyperlinks als ref
 \RequirePackage[printonlyused]{acronym} % Abkürzungen
 % Seitenränder
-\RequirePackage[left=4cm,right=2cm,top=2cm,bottom=2cm,includeheadfoot,headheight=50pt]{geometry}
+\RequirePackage[left=2cm,right=2cm,top=2cm,bottom=2cm,includeheadfoot,headheight=50pt]{geometry}
 
 % Seitenumbrüche per Section
 \RequirePackage{titlesec}
