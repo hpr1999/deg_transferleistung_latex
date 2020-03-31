@@ -30,9 +30,9 @@
 \RequirePackage{titlesec}
 \newcommand{\sectionbreak}{\clearpage}
 
-% Zielenabstand 1,5
+% Zeilenabstand 1,25
 \RequirePackage{setspace}
-\onehalfspacing
+\AtBeginDocument{\setstretch{1.125}}
 
 % Kopf- und Fußzeile
 \RequirePackage[bottom]{footmisc}
