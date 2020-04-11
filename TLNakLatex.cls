@@ -21,8 +21,32 @@
 \RequirePackage{listings} % Codelistings
 \RequirePackage[all]{nowidow} % Keine Waisen (einsame Zeile eines Absatzes auf der nächsten Seite)
 \RequirePackage[hidelinks]{hyperref} % für hyperlinks als ref
-\RequirePackage[all]{hypcap} % für hyperlinks als ref
-\RequirePackage[printonlyused]{acronym} % Abkürzungen
+
+% uml & erd
+\RequirePackage{tikz}
+\RequirePackage{pgf-umlcd}
+\usetikzlibrary[er,positioning]
+%% underline primary key
+\newbox\underlinebox
+\tikzset{
+    key attribute/.append style={
+        font=\rmfamily,
+        execute at begin node={
+            \setbox\underlinebox=\hbox\bgroup
+        },
+        execute at end node={
+             \egroup\underline{\box\underlinebox}
+        }
+    }
+}
+%%
+
+
+% Abkürzungen
+\RequirePackage[printonlyused]{acronym}
+\renewcommand{\acsfont}[1]{\textbf{#1}}
+\renewcommand{\acffont}[1]{\textit{#1}}
+
 % Seitenränder
 \RequirePackage[left=2cm,right=2cm,top=2cm,bottom=2cm,includeheadfoot,headheight=50pt]{geometry}
 
@@ -47,6 +71,15 @@
 % Kapitel 4. Ebene
 \newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
 
+% für hyperlinks als ref
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[all]{hypcap} 
+
+%Literatur Einstellungen
+\RequirePackage[backend=biber, style=ieee]{biblatex}
+\ExecuteBibliographyOptions{sorting=nty}
+\setcounter{biburllcpenalty}{7000} % linebreak in links
+
 % Zitationsstil
 \DeclareQuoteStyle{german}
         {\itshape\textquotedblleft}
@@ -57,7 +90,11 @@
         {\textquoteright}
 
 % Listingstil
-\lstdefinestyle{java}{...} 
+\lstdefinestyle{java}{...}
+\lstset{language = java,frame = single}
+\newcommand{\code}[1]{\texttt{#1}}
+\renewcommand{\lstlistlistingname}{Listingverzeichnis}
+
 % Variablendefinitionen
 
 \newcommand*{\matrikelnr}[1]{\gdef\@matrikelnr{#1}}
@@ -67,7 +104,6 @@
 \newcommand*{\unteruntertitel}[1]{\gdef\@unteruntertitel{#1}}
 
 % Title
-
 \renewcommand{\maketitle}{
 		\thispagestyle{fancy}
 		\begin{titlepage}

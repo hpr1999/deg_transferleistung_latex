@@ -4,8 +4,9 @@
 
 \LoadClass{TLNakLatex}
 
-\fancyhead[L]{\includegraphics[height=30pt]{image/data-experts-logo.png}} % Kopfzeile links
-        
+\fancyhead[L]{\includegraphics[height=30pt]{image/data-experts-logo.png}\includegraphics[height=30pt]{image/transferleistung.jpg}} % Kopfzeile Links - Mitte
+\fancyhead[R]{\includegraphics[height=30pt]{image/Nordakademie_Logo_klein.jpg}} % Kopfzeile rechts
+
 % DEG-Textcommands
 \newcommand{\eigenname}[1]{\textit{#1}}
 \newcommand{\DEG}{\textbf{data experts}}

@@ -1,5 +1,5 @@
 \section{Einleitung}
-Testsätze 
+Testsätze mit ö, ü und ß.
 \cite{Dum:Bei}
 
 \begin{figure}[h]
@@ -24,3 +24,53 @@ Testsätze
 \begin{lstlisting}[caption=Ausgabe Hallo Welt, label=sysout, captionpos=b]
     System.out.println("Hallo Welt");
 \end{lstlisting}
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[auto,node distance = 0.9cm]
+        \node[entity](blatt){AntragsblattImpl}[grow = up, sibling distance = 4cm]
+            child {node[key attribute]{id}};
+
+        \node[relationship](rel1)[right = of blatt]{Hat};
+
+        \node[entity](container)[right = of rel1]{TeilVorhabenContainer}[grow = up, sibling distance = 4cm]
+            child {node[key attribute]{id}};
+
+        \path(rel1) edge node {1} (blatt) edge node {1} (container);
+
+        \node[relationship](rel2)[right = of container]{Hat};
+
+        \node[entity](content)[right = of rel2]{TeilVorhabenImpl}[grow = up, sibling distance = 2cm]
+            child {node[key attribute]{id}}
+            child {node[attribute]{owner}};
+
+        \path(rel2) edge node {1} (container) edge node {0-n} (content);
+    \end{tikzpicture}
+    \caption{Entity-Relationship-Diagramm für das Praxisbeispiel}\label{fig:case:ERD}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    
+\begin{tikzpicture}
+    \begin{class}[text width=4cm]{AntragsblattImpl}{0,0}
+        \attribute{- id : Long}
+        \attribute{- teilVorhabenContainer : TeilVorhabenContainer}
+    \end{class}
+
+    \begin{class}[text width=5cm]{TeilVorhabenContainer}{6.5,-0.2}
+        \attribute{- id : Long}
+        \attribute{- teilvorhaben : List<TeilVorhabenImpl>}
+    \end{class}
+
+    \begin{class}[text width=4cm]{TeilVorhabenImpl}{13,-0.65}
+        \attribute{- id : Long}
+    \end{class}
+
+    \unidirectionalAssociation{AntragsblattImpl}{1}{}{TeilVorhabenContainer}{1}{}
+    \unidirectionalAssociation{TeilVorhabenContainer}{1}{}{TeilVorhabenImpl}{0..*}{}
+\end{tikzpicture}
+
+    \caption{UML-Klassendiagramm für das Praxisbeispiel}\label{fig:case:UML}
+\end{figure}
