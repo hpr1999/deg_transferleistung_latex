@@ -1,0 +1,104 @@
+\section{Beispiel}
+Testsätze mit ö, ü und ß.
+\cite{Dum:Bei}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{image/transferleistung.jpg}
+    \caption{Ein Beispielbild im Text.}
+    \label{fig:tl-logo}
+\end{figure}
+
+% bessere booktabs-Vergleichstabelle
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{>{\raggedleft\arraybackslash}m{0.45\textwidth}>{\raggedright\arraybackslash}m{0.45\textwidth}}
+        \toprule
+        \centering\arraybackslash\textsc{TESTESTEST} & \centering\arraybackslash\textsc{TESTESTEST} \\\midrule
+        \multicolumn{2}{c}{\eigenname{Beispielheaderzeugs}}                                         \\
+        TESTESTESTTESTESTESTTESTES TEST               & TESTESTESTTESTESTES TTESTESTESTTESTESTEST    \\\midrule
+        \multicolumn{2}{c}{\eigenname{Header}}                                                      \\
+        asdasdasdasdasdasdasdasdasda                 & a                                            \\\bottomrule
+    \end{tabular}
+    \caption{Beispiel 2}%
+    \label{tab:ex1}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{>{\centering\arraybackslash}m{0.45\textwidth}>{\centering\arraybackslash}m{0.45\textwidth}}
+        \toprule
+        Stärken                        & Schwächen                      \\\midrule
+        TESTESTESTTESTESTESTTESTESTEST & TESTESTESTTESTESTESTTESTESTEST \\
+        TESTESTESTTESTESTESTTESTESTEST & TESTESTESTTESTESTESTTESTESTEST \\\bottomrule
+    \end{tabular}
+    \caption{Beispiel 2}%
+    \label{tab:ex2}
+\end{table}
+
+% normale Tabelle
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|}
+        \hline
+        Tabellenkopf 1 & Tabellenkopf 2 & Tabellenkopf 3 \\\hline\hline
+        Daten 1        & Daten 2        & Daten 3        \\\hline
+        \multicolumn{3}{|c|}{Zusammengefasste Spalten}   \\\hline
+    \end{tabular}
+    \caption{Eine Beispieltabelle im Text.}
+    \label{tab:ex3}
+\end{table}
+
+\begin{lstlisting}[caption=Ausgabe Hallo Welt, label=sysout, captionpos=b]
+    System.out.println("Hallo Welt");
+\end{lstlisting}
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[auto,node distance = 0.9cm]
+        \node[entity](blatt){AntragsblattImpl}[grow = up, sibling distance = 4cm]
+        child {node[key attribute]{id}};
+
+        \node[relationship](rel1)[right = of blatt]{Hat};
+
+        \node[entity](container)[right = of rel1]{TeilVorhabenContainer}[grow = up, sibling distance = 4cm]
+        child {node[key attribute]{id}};
+
+        \path(rel1) edge node {1} (blatt) edge node {1} (container);
+
+        \node[relationship](rel2)[right = of container]{Hat};
+
+        \node[entity](content)[right = of rel2]{TeilVorhabenImpl}[grow = up, sibling distance = 2cm]
+        child {node[key attribute]{id}}
+        child {node[attribute]{owner}};
+
+        \path(rel2) edge node {1} (container) edge node {0-n} (content);
+    \end{tikzpicture}
+    \caption{Entity-Relationship-Diagramm für das Praxisbeispiel}\label{fig:case:ERD}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+
+    \begin{tikzpicture}
+        \begin{class}[text width=4cm]{AntragsblattImpl}{0,0}
+            \attribute{- id : Long}
+            \attribute{- teilVorhabenContainer : TeilVorhabenContainer}
+        \end{class}
+
+        \begin{class}[text width=5cm]{TeilVorhabenContainer}{6.5,-0.2}
+            \attribute{- id : Long}
+            \attribute{- teilvorhaben : List<TeilVorhabenImpl>}
+        \end{class}
+
+        \begin{class}[text width=4cm]{TeilVorhabenImpl}{13,-0.65}
+            \attribute{- id : Long}
+        \end{class}
+
+        \unidirectionalAssociation{AntragsblattImpl}{1}{}{TeilVorhabenContainer}{1}{}
+        \unidirectionalAssociation{TeilVorhabenContainer}{1}{}{TeilVorhabenImpl}{0..*}{}
+    \end{tikzpicture}
+
+    \caption{UML-Klassendiagramm für das Praxisbeispiel}\label{fig:case:UML}
+\end{figure}

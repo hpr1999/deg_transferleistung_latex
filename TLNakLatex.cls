@@ -6,6 +6,7 @@
 \LoadClass[12pt,a4paper,titlepage]{article}
 
 % Pakete
+\RequirePackage{pdfpages}
 \RequirePackage[ngerman]{babel} % deutsches Sprachpaket
 \RequirePackage[utf8]{inputenc} % utf8 Support
 \RequirePackage[babel, german=quotes]{csquotes}
@@ -20,7 +21,12 @@
 \RequirePackage{multirow} % Tabellen mit multirow Zellen
 \RequirePackage{listings} % Codelistings
 \RequirePackage[all]{nowidow} % Keine Waisen (einsame Zeile eines Absatzes auf der nächsten Seite)
-\RequirePackage[hidelinks]{hyperref} % für hyperlinks als ref
+
+\RequirePackage{array} % m und b tabellenausrichtungen
+\RequirePackage{booktabs}
+\renewcommand{\arraystretch}{1.5} % Tabellen: Zeilenabstand
+\setlength{\tabcolsep}{12pt} % Tabellen: Spaltenabstand
+
 
 % uml & erd
 \RequirePackage{tikz}
@@ -72,7 +78,7 @@
 \newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
 
 % für hyperlinks als ref
-\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[hidelinks]{hyperref} % für hyperlinks als ref
 \RequirePackage[all]{hypcap} 
 
 %Literatur Einstellungen

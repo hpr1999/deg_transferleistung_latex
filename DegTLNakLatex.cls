@@ -8,7 +8,7 @@
 \fancyhead[R]{\includegraphics[height=30pt]{image/Nordakademie_Logo_klein.jpg}} % Kopfzeile rechts
 
 % DEG-Textcommands
-\newcommand{\eigenname}[1]{\textit{#1}}
+\newcommand{\eigenname}[1]{\textsc{#1}}
 \newcommand{\DEG}{\textbf{data experts}}
 \newcommand{\profil}{\eigenname{profil}}
 \newcommand{\pcs}{\eigenname{profil c/s}}
