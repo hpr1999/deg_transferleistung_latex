@@ -2,6 +2,7 @@
 
 \documentclass{DegTLNakLatex}
 
+% hauptsächlich für maketitle
 \matrikelnr{MATRIKELNUMMER}
 \tlnr{NUMMER DER TRANSFERLEISTUNG}
 \zenturie{ZENTURIE}
@@ -14,7 +15,8 @@
 \begin{document}
 	 
 	\begin{frontmatter}
-			\maketitle
+			%\maketitle
+			\includepdf{titelblatt.pdf} % für Ersetzungsfelder das Formular nochmal als "statisches pdf" exportieren
 			\inhaltsverzeichnis{}
 			\abbildungsverzeichnis{}
 			\tabellenverzeichnis{}
