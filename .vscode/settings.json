@@ -23,5 +23,6 @@
         "**/*.fls": true,
         "**/*.out": true,
         "**/*.toc": true,
+        "**/*.dvi":true
     }
 }
