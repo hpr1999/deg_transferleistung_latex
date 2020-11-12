@@ -85,6 +85,8 @@
 \RequirePackage[hidelinks]{hyperref} % für hyperlinks als ref
 \RequirePackage[all]{hypcap} 
 
+\DeclareUrlCommand\email{\urlstyle{rm}} % Typeset Email Adresses
+
 %Literatur Einstellungen
 \RequirePackage[backend=biber, style=ieee]{biblatex}
 \ExecuteBibliographyOptions{sorting=nty}
