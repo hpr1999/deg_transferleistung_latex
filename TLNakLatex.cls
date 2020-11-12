@@ -85,7 +85,7 @@
 \RequirePackage[hidelinks]{hyperref} % für hyperlinks als ref
 \RequirePackage[all]{hypcap} 
 
-\DeclareUrlCommand\email{\urlstyle{rm}} % Typeset Email Adresses
+\newcommand{\email}[1]{\href{mailto:#1}{\texttt{#1}}}
 
 %Literatur Einstellungen
 \RequirePackage[backend=biber, style=ieee]{biblatex}
