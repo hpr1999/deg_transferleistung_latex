@@ -16,17 +16,21 @@
 \RequirePackage{microtype}
 \RequirePackage{float}
 \RequirePackage{eurosym} % Euro Symbol
+
 \RequirePackage[parfill]{parskip} % Keine Einrückung bei neuen Absaetzen
+\setlength{\parskip}{\medskipamount} % Einrückungen in minipages bleiben gleich
+\newcommand{\@minipagerestore}{\setlength{\parskip}{\medskipamount}}
+
 \RequirePackage{array} % Tabellen
 \RequirePackage{multirow} % Tabellen mit multirow Zellen
 \RequirePackage{listings} % Codelistings
 \RequirePackage[all]{nowidow} % Keine Waisen (einsame Zeile eines Absatzes auf der nächsten Seite)
 
 \RequirePackage{array} % m und b tabellenausrichtungen
+\RequirePackage{longtable} % Tabellen über mehrere Spalten
 \RequirePackage{booktabs}
 \renewcommand{\arraystretch}{1.5} % Tabellen: Zeilenabstand
 \setlength{\tabcolsep}{12pt} % Tabellen: Spaltenabstand
-
 
 % uml & erd
 \RequirePackage{tikz}
@@ -209,3 +213,8 @@
 \newenvironment{anhang}{\begin{appendix}
 		\renewcommand{\thesection}{\Roman{section}}
 	}{\end{appendix}}
+
+\newcommand{\labeledDescription}[2]{
+\begin{description}
+\item[#1]\hfill\\#2 
+\end{description}}

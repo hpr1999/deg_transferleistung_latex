@@ -102,3 +102,80 @@ Testsätze mit ö, ü und ß.
 
     \caption{UML-Klassendiagramm für das Praxisbeispiel}\label{fig:case:UML}
 \end{figure}
+
+
+
+\begin{longtable}{cp{0.6\textwidth}c}
+    \caption{Beispiel-LongTable über mehrere Seiten \label{tab:longtable}}\\
+    \toprule
+    Datum    & Komponente / Aufgabe                                                            & Zeit                    \\* \midrule
+    \endfirsthead
+    \multicolumn{3}{c}%
+    {{\bfseries Tabelle \thetable\ wird von der vorigen Seite fortgeführt.}} \\\midrule
+    Datum    & Komponente / Aufgabe                                                            & Zeit                    \\* \midrule
+    \endhead
+    %
+    \bottomrule
+    \endfoot
+    %
+    \bottomrule
+    \endlastfoot
+    %
+    18.10.20 & Organisatorisch (Aufgabenunabhängige Absprache)                                 & 13.30 - 15.00           \\
+    19.10.20 & Absprache Aufgabenspezifisch, API Design                                        & 18.00 - 20.30           \\
+    20.10.20 & Absprache Entitätenmodellierung Backend                                         & 15.00 - 17.00           \\
+    22.10.20 & Absprache + UI Design                                                           & 17.00 - 19.00           \\
+    23.10.20 & Initiales SpringBoot-Projekt                                                    & 17.15 - 19.15           \\
+    24.10.20 & Pair-Programming JPA/DB-Schicht                                                 & 14.00 - 17.00           \\
+    25.10.20 & JPA/DB-Tests                                                                    & 13.30 - 16.30           \\
+    25.10.20 & DAO / Spring Data Repositories                                                  & 17.30 - 18.30           \\
+    26.10.20 & Besprechung Authentication                                                      & 14.15 - 15.00           \\
+    26.10.20 & Diverse Backend Themen                                                          & 16.00 - 18.30           \\
+    26.10.20 & Generiere Testdaten                                                             & 18.30 - 19.00           \\
+    27.10.20 & Testdaten in Spring integriert                                                  & 09.30 - 10.30           \\
+    27.10.20 & ReadMe für das Projekt                                                          & 10.30 - 12.00           \\
+    27.10.20 & Review Backend und diverse Absprachen                                           & 17.00 - 17.30           \\
+    27.10.20 & Backend-Review Authentication                                                   & 21.30 - 22.15           \\
+    28.10.20 & Refactoring Authentication                                                      & 09.30 - 12.00           \\
+    28.10.20 & Refactoring Authentication                                                      & 13.00 - 14.30           \\
+    29.10.20 & Reviews Docker / Github                                                         & 09.15 - 10.00           \\
+    29.10.20 & Backend - Daos                                                                  & 10.00 - 12.00           \\
+    29.10.20 & Backend - Daos und Tests                                                        & 13.30 - 17.45           \\
+    30.10.20 & Absprache (4-er meeting)                                                        & 14.00 - 15.30
+    \\
+    02.11.20 & Pair-Programming / Absprache Controller Implementation                          & 11.00 - 15.00           \\
+    03.11.20 & Backend - Daos und Tests                                                        & 13.00 - 16.00           \\
+    03.11.20 & Lagebesprechung                                                                 & 16.00 - 17.00           \\
+    03.11.20 & Backend - Tests für Query und Backend-Besprechung über Error Handling           & 17.00 - 19.00           \\
+    05.11.20 & Backend:  Survey-Query, Controller und Service-Schicht + Besprechung und Review & 14.00 - 19.00           \\
+    06.11.20 & Backend: Tests für Controller-Schicht                                           & 14.30 - 19.00           \\
+    09.11.20 & Backend: Tests für Controller-Schicht                                           & 09.00 - 09.45           \\
+    09.11.20 & Code Reviews, Merges und Absprache im Backend-Team für die letzte Woche         & 10.00 - 11.30           \\
+    09.11.20 & Backend: Absprachen, Anpassung des Domänenmodells, Refactorings Datenschicht    & 13.00 - 18.00           \\
+    09.11.20 & Dokumentation Source Code und Einstellung des Formatters im Backend             & 18.00 - 19.30           \\
+    10.11.20 & Dokumentation der Autoren im Backend und Bearbeitung von Linter-Warnungen       & 10.00 - 11.30           \\
+    10.11.20 & Schnellabsprache Front\&Backend                                                 & 11.30 - 12.00           \\
+    10.11.20 & Arbeit am Abgabedokument                                                        & 15.00 - 19.30           \\
+    11.11.20 & Absprache (4-er meeting)                                                        & 16.00 - 17.20 
+    \\*
+    \end{longtable}
+
+
+    \begin{figure}[H]
+        \begin{minipage}{0.55\textwidth}
+    
+            TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+            TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+            
+            TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+
+            TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.4\textwidth}
+           \centering
+            \includegraphics{image/data-experts-logo.png}
+            \caption{Test für Minipages mit korrekter Einrückung ud außerdem mit Bildern}
+            \label{fig:ex4}
+        \end{minipage}
+    \end{figure}
