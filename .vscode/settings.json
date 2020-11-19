@@ -24,7 +24,10 @@
         "**/*.out": true,
         "**/*.toc": true,
         "**/*.dvi":true,
-        "_minted-transferleistung":true
+        "_minted-transferleistung":true,
+        ".fuse*":true,
+        "**/*.fdb_latexmk":true
+
     },
     "latex-workshop.latex.recipes": [
 
@@ -46,8 +49,8 @@
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "%DOC%",
-                "-shell-escape"
+                "-shell-escape",
+                "%DOC%"
             ],
             "env": {}
         },
