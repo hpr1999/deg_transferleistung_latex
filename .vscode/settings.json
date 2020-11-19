@@ -23,7 +23,8 @@
         "**/*.fls": true,
         "**/*.out": true,
         "**/*.toc": true,
-        "**/*.dvi":true
+        "**/*.dvi":true,
+        "_minted-transferleistung":true
     },
     "latex-workshop.latex.recipes": [
 
