@@ -22,23 +22,23 @@
 
 % Zeilenabstand 1,25
 \RequirePackage{setspace}
-\AtBeginDocument{\setstretch{1.125}}
+	\AtBeginDocument{\setstretch{1.125}}
 
 %% Kopf- und Fußzeile
 \RequirePackage[bottom]{footmisc}
 \RequirePackage{fancyhdr}
-\pagestyle{fancy} % eigener Seitenstil
-\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
-\fancyhead[L]{\includegraphics[height=30pt]{image/Nordakademie_Logo_klein.jpg}} % Kopfzeile links
-\fancyhead[R]{\includegraphics[height=30pt]{image/transferleistung.jpg}} % Kopfzeile rechts
-\renewcommand{\headrulewidth}{0.4pt} % obere Trennlinie
-\fancyfoot[C]{\hyperlink{toc}{\thepage}} % Seitennummer
+	\pagestyle{fancy} % eigener Seitenstil
+	\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+	\fancyhead[L]{\includegraphics[height=30pt]{image/Nordakademie_Logo_klein.jpg}} % Kopfzeile links
+	\fancyhead[R]{\includegraphics[height=30pt]{image/transferleistung.jpg}} % Kopfzeile rechts
+	\renewcommand{\headrulewidth}{0.4pt} % obere Trennlinie
+	\fancyfoot[C]{\hyperlink{toc}{\thepage}} % Seitennummer
 \RequirePackage[parfill]{parskip} % Keine Einrückung bei neuen Absaetzen
-\setlength{\parskip}{\medskipamount} % Einrückungen in minipages bleiben gleich
-\newcommand{\@minipagerestore}{\setlength{\parskip}{\medskipamount}}
+	\setlength{\parskip}{\medskipamount} % Einrückungen in minipages bleiben gleich
+	\newcommand{\@minipagerestore}{\setlength{\parskip}{\medskipamount}}
 \RequirePackage[all]{nowidow} % Keine Waisen (einsame Zeile eines Absatzes auf der nächsten Seite)
-\RequirePackage{titlesec} % Seitenumbrüche per Section
-\newcommand{\sectionbreak}{}
+\RequirePackage{titlesec} 
+	\newcommand{\sectionbreak}{}  % Hier können z.B. mit \clearpage Seitenumbrüche per Section eingestellt werden
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%% TABLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,25 +76,25 @@
 
 %%%%%%%%%%%%%%%%%%% ABBREVIATIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[printonlyused]{acronym}
-\renewcommand{\acsfont}[1]{\textbf{#1}}
-\renewcommand{\acffont}[1]{\textit{#1}}
+	\renewcommand{\acsfont}[1]{\textbf{#1}}
+	\renewcommand{\acffont}[1]{\textit{#1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%% CITING %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Literatur Einstellungen
 \RequirePackage[backend=biber, style=ieee]{biblatex}
-\ExecuteBibliographyOptions{sorting=nty}
-\setcounter{biburllcpenalty}{7000} % linebreak in links
+	\ExecuteBibliographyOptions{sorting=nty}
+	\setcounter{biburllcpenalty}{7000} % linebreak in links
 % Zitationen und Zitationsstil
 
 \RequirePackage[babel, german=quotes]{csquotes}
-\DeclareQuoteStyle{german}
-        {\itshape\textquotedblleft}
-        [\textquotedblleft]
-        {\textquotedblright}
-        [0.05em]
-        {\textquoteleft}
-        {\textquoteright}
+	\DeclareQuoteStyle{german}
+			{\itshape\textquotedblleft}
+			[\textquotedblleft]
+			{\textquotedblright}
+			[0.05em]
+			{\textquoteleft}
+			{\textquoteright}
 
 \RequirePackage[center]{caption} % Zentrierte Captions
 % für hyperlinks als ref
@@ -139,12 +139,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%% STRUCTURE %%%%%%%%%%%%%%%%%%
-% Ueberschriften ohne Zahl, aber in der TOC
-\newcommand{\sectionX}[1]{
-	\newpage
-	\addcontentsline{toc}{section}{#1}
-	\section*{#1}}
-
 % Seitennummerierung
 \newcommand{\romannumbering}{
 	\pagenumbering{Roman}
@@ -170,48 +164,48 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%% LISTS %%%%%%%%%%%%%%%%%%%%
-\newcommand{\listingverzeichnis}{
-	\newpage
-	\phantomsection
-	\addcontentsline{toc}{section}{Quellcodeverzeichnis}
-	\listoflistings
-}
-
 \newcommand{\inhaltsverzeichnis}{
 	\newpage
 	\hypertarget{toc}
 	\phantomsection
-	\addcontentsline{toc}{section}{Inhaltsverzeichnis}
 	\tableofcontents
 }
 
 \newcommand{\abbildungsverzeichnis}{
 	\newpage
 	\phantomsection
-	\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+	\addcontentsline{toc}{section}{\footnotesize{Abbildungsverzeichnis}}
 	\listoffigures
 }
 
 \newcommand{\tabellenverzeichnis}{
-	\newpage
 	\phantomsection
-	\addcontentsline{toc}{section}{Tabellenverzeichnis}
+	\addcontentsline{toc}{section}{\footnotesize{Tabellenverzeichnis}}
 	\listoftables
+}
+
+\newcommand{\abkuerzungsverzeichnis}{
+	\phantomsection
+	\section*{Abkürzungsverzeichnis}
+	\addcontentsline{toc}{section}{\footnotesize{Abkürzungsverzeichnis}}
+	\begin{center}
+		\input{content/acronyms.tex}
+	\end{center}
+}
+
+\newcommand{\listingverzeichnis}{
+	\phantomsection
+	\addcontentsline{toc}{section}{\footnotesize{Quellcodeverzeichnis}}
+	\listoflistings
 }
 
 \newcommand{\quellenverzeichnis}{
 	\newpage	
 	\phantomsection
-	\addcontentsline{toc}{section}{Literatur}
+	\addcontentsline{toc}{section}{\footnotesize{Literatur}}
 	\printbibliography
 }
 
-\newcommand{\abkuerzungsverzeichnis}{
-	\newpage
-	\phantomsection
-	\sectionX{Abkürzungsverzeichnis}
-	\input{content/acronyms.tex}
-}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%% CODE %%%%%%%%%%%%%%%%%%
