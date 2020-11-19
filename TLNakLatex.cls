@@ -5,27 +5,30 @@
 
 \LoadClass[12pt,a4paper,titlepage]{article}
 
-% Pakete
-\RequirePackage{pdfpages}
 \RequirePackage[ngerman]{babel} % deutsches Sprachpaket
-\RequirePackage[utf8]{inputenc} % utf8 Support
-\RequirePackage[babel, german=quotes]{csquotes}
-\RequirePackage[T1]{fontenc}
-\RequirePackage{lmodern} % Gerenderte Schrift
-\RequirePackage{graphicx} % Graphiken, z.B. Tabellen o.ä.
-\RequirePackage{microtype}
-\RequirePackage{float}
-\RequirePackage{eurosym} % Euro Symbol
 
+%%%%%%%%%%%%%%%%%% FONT %%%%%%%%%%%%%%%%%%
+\RequirePackage[utf8]{inputenc} % utf8 Support
+\RequirePackage[T1]{fontenc}
+\RequirePackage{textalpha} % Griechische Schriftzeichen
+\RequirePackage{lmodern} % Gerenderte Schrift
+\RequirePackage{microtype}
+\RequirePackage{eurosym} % Euro Symbol
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\RequirePackage{graphicx} % Graphiken, z.B. Tabellen o.ä.
+\RequirePackage{float}
 \RequirePackage[parfill]{parskip} % Keine Einrückung bei neuen Absaetzen
 \setlength{\parskip}{\medskipamount} % Einrückungen in minipages bleiben gleich
 \newcommand{\@minipagerestore}{\setlength{\parskip}{\medskipamount}}
 
-\RequirePackage{array} % Tabellen
-\RequirePackage{multirow} % Tabellen mit multirow Zellen
-\RequirePackage{listings} % Codelistings
+\RequirePackage{pdfpages}
+
+
 \RequirePackage[all]{nowidow} % Keine Waisen (einsame Zeile eines Absatzes auf der nächsten Seite)
 
+\RequirePackage{multirow} % Tabellen mit multirow Zellen
 \RequirePackage{array} % m und b tabellenausrichtungen
 \RequirePackage{longtable} % Tabellen über mehrere Spalten
 \RequirePackage{booktabs}
@@ -50,25 +53,26 @@
     }
 }
 %%
-
+\RequirePackage{enumitem}% Custom Enumerate (z.B. Start mit 0)
 
 % Abkürzungen
 \RequirePackage[printonlyused]{acronym}
 \renewcommand{\acsfont}[1]{\textbf{#1}}
 \renewcommand{\acffont}[1]{\textit{#1}}
 
-% Seitenränder
-\RequirePackage[left=2cm,right=2cm,top=2cm,bottom=2cm,includeheadfoot,headheight=50pt]{geometry}
 
 % Seitenumbrüche per Section
 \RequirePackage{titlesec}
-\newcommand{\sectionbreak}{\clearpage}
+\newcommand{\sectionbreak}{}
+
+% Seitenränder
+\RequirePackage[left=2cm,right=2cm,top=2cm,bottom=2cm,includeheadfoot,headheight=50pt]{geometry}
 
 % Zeilenabstand 1,25
 \RequirePackage{setspace}
 \AtBeginDocument{\setstretch{1.125}}
 
-% Kopf- und Fußzeile
+%% Kopf- und Fußzeile
 \RequirePackage[bottom]{footmisc}
 \RequirePackage{fancyhdr}
 \pagestyle{fancy} % eigener Seitenstil
@@ -77,35 +81,18 @@
 \fancyhead[R]{\includegraphics[height=30pt]{image/transferleistung.jpg}} % Kopfzeile rechts
 \renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
 \fancyfoot[C]{\hyperlink{toc}{\thepage}} %Seitennummer
+%%
 
-% Kapitel 4. Ebene
-\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
 
 % für hyperlinks als ref
 \RequirePackage[hidelinks]{hyperref} % für hyperlinks als ref
 \RequirePackage[all]{hypcap} 
-
-\newcommand{\email}[1]{\href{mailto:#1}{\texttt{#1}}}
+\newcommand{\linkdest}[2]{\makeatletter\Hy@raisedlink{\hypertarget{#1}{}}#2\makeatother} % makes link correctly point to the top of the line, not the baseline
 
 %Literatur Einstellungen
 \RequirePackage[backend=biber, style=ieee]{biblatex}
 \ExecuteBibliographyOptions{sorting=nty}
 \setcounter{biburllcpenalty}{7000} % linebreak in links
-
-% Zitationsstil
-\DeclareQuoteStyle{german}
-        {\itshape\textquotedblleft}
-        [\textquotedblleft]
-        {\textquotedblright}
-        [0.05em]
-        {\textquoteleft}
-        {\textquoteright}
-
-% Listingstil
-\lstdefinestyle{java}{...}
-\lstset{language = java,frame = single}
-\newcommand{\code}[1]{\texttt{#1}}
-\renewcommand{\lstlistlistingname}{Listingverzeichnis}
 
 % Variablendefinitionen
 
@@ -165,13 +152,14 @@
 	\pagenumbering{Roman}
 	\setcounter{page}{\value{frontmatter}}}
 
-% QOL für Verzeichnisse
+%%%%%%%%%%%%%%%%%%%% Verzeichnisse %%%%%%%%%%%%%%%%%%%%
 \newcommand{\listingverzeichnis}{
 	\newpage
 	\phantomsection
-	\addcontentsline{toc}{section}{Listingverzeichnis}
-	\lstlistoflistings
+	\addcontentsline{toc}{section}{Quellcodeverzeichnis}
+	\listoflistings
 }
+
 
 \newcommand{\inhaltsverzeichnis}{
 	\newpage
@@ -208,6 +196,8 @@
 	\sectionX{Abkürzungsverzeichnis}
 	\input{content/acronyms.tex}
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Umgebungen
 \newenvironment{mainmatter}{\arabicnumbering}{\newpage}
 \newenvironment{frontmatter}{\romannumbering}{\newpage}
@@ -216,7 +206,52 @@
 		\renewcommand{\thesection}{\Roman{section}}
 	}{\end{appendix}}
 
+
 \newcommand{\labeledDescription}[2]{
 \begin{description}
 \item[#1]\hfill\\#2 
 \end{description}}
+
+\newcommand{\email}[1]{\href{mailto:#1}{\texttt{#1}}} % Email-Kommando
+\newcommand{\ident}[1]{\textsc{#1}}
+
+\RequirePackage[center]{caption} % Zentrierte Captions
+\newcommand{\srcSelf}{\textit{(Eigene Darstellung)}}
+\newcommand{\srcSelfCaption}[1]{\caption[#1]{#1 \srcSelf{}}}
+\newcommand{\srcSelfTable}{\textit{(Eigene Auflistung)}}
+\newcommand{\srcSelfTableCaption}[1]{\caption[#1]{#1 \srcSelfTable{}}}
+
+%%%%%%%%%%%%%%%%%% CODE %%%%%%%%%%%%%%%%%%
+%% Fancy Codelistings %%
+\RequirePackage{listings}
+\RequirePackage{minted}
+%%
+
+%% Einfache Codelistings %%
+\RequirePackage{listings} 
+\lstdefinestyle{java}{...}
+\lstset{
+	language    = java,
+	frame       = single,
+	keepspaces  = true,
+	basicstyle  = \small\ttfamily,
+	columns     = fullflexible,
+	breaklines  = trueca
+	}
+%%
+
+\newcommand{\code}[1]{\texttt{#1}} %% Inline Code
+
+\renewcommand{\listoflistingscaption}{Quellcodeverzeichnis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Zitationen und Zitationsstil
+
+\RequirePackage[babel, german=quotes]{csquotes}
+\DeclareQuoteStyle{german}
+        {\itshape\textquotedblleft}
+        [\textquotedblleft]
+        {\textquotedblright}
+        [0.05em]
+        {\textquoteleft}
+        {\textquoteright}

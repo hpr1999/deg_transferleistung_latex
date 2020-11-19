@@ -6,15 +6,3 @@
 
 \fancyhead[L]{\includegraphics[height=30pt]{image/data-experts-logo.png}\includegraphics[height=30pt]{image/transferleistung.jpg}} % Kopfzeile Links - Mitte
 \fancyhead[R]{\includegraphics[height=30pt]{image/Nordakademie_Logo_klein.jpg}} % Kopfzeile rechts
-
-% DEG-Textcommands
-\newcommand{\eigenname}[1]{\textsc{#1}}
-\newcommand{\DEG}{\textbf{data experts}}
-\newcommand{\profil}{\eigenname{profil}}
-\newcommand{\pcs}{\eigenname{profil c/s}}
-\newcommand{\rdv}{\eigenname{rdv}}
-\newcommand{\aiv}{\eigenname{aiv}}
-\newcommand{\profident}{\eigenname{profident}}
-\newcommand{\profiltext}{\eigenname{\textbf{Pro}grammsystem zur rechnergestützten Verwaltung von \textbf{F}ördermitteln \textbf{I}n der \textbf{L}andwirtschaft}}
-\newcommand{\eigeneDarstellung}{\textit{(Eigene Darstellung)}}
-\newcommand{\eigeneAuflistung}{\textit{(Eigene Auflistung)}}

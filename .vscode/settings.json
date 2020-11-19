@@ -45,7 +45,8 @@
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "%DOC%"
+                "%DOC%",
+                "-shell-escape"
             ],
             "env": {}
         },

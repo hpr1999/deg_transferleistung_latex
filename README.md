@@ -15,6 +15,8 @@ Getestet habe ich diese Vorlage
 - mithilfe von [Overleaf](https://overleaf.com) (Empfehlung für Anfänger oder Gruppen)
 - unter Windows mit [MikTeX](https://miktex.org) (Oder mit [chocolatey](https://chocolatey.org): ``choco install miktex``)
 
+Für die Verwendung der verbesserten Codeblöcke muss das Paket minted und Python, und das python-Modul [pygments](https://pygments.org/download/) eingebunden werden.
+
 ### Build
 
 Zum Bauen der PDF habe ich folgende Befehlskette genutzt:
@@ -52,21 +54,8 @@ Schon taucht das Logo nicht mehr auf und die [DEG-Kommandos](#deg-kommandos) sin
 
 ## DEG-Kommandos
 
-Die Vorlage enthält ein paar wenige deg-Kommandos, die nicht viel mehr tun, als einen einheitlichen Stil für Eigennamen zu vereinfachen.
+Die Vorlage enthält ein paar wenige deg-Kommandos, die nicht viel mehr tun, als einen einheitlichen Stil zu vereinfachen.
 
 Diese sind in der [DegTLNakLatex.cls](DegTLNakLatex.cls) zu finden und können dort dementsprechend bearbeitet werden.
 
-- Eigennamen:
-
-| Kommando            | Beschreibung                             | Standardoutput                                                                                                 |
-| ------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| DEG                 | Der formatierte Firmenname               | **data experts**                                                                                               |
-| eigenname{Beispiel} | Stellt Eigennamen dar. (kursiv)          | *Beispiel*                                                                                                     |
-| profil              | "profil" als Eigenname                   | *profil*                                                                                                       |
-| pcs                 | "profil c/s" als Eigenname               | *profil c/s*                                                                                                   |
-| rdv                 | "rdv" als Eigenname                      | *rdv*                                                                                                          |
-| aiv                 | "aiv" als Eigenname                      | *aiv*                                                                                                          |
-| profident           | "profident" als Eigenname                | *profident*                                                                                                    |
-| profiltext          | Abkürzungserklärung von profil           | <i>**Pro**grammsystem zur rechnergestützten Verwaltung von **F**ördermitteln **I**n der **L**andwirtschaft</i> |
-| eigeneDarstellung   | Formatierter Text für eigene Abbildungen | *Eigene Darstellung*                                                                                           |
-| eigeneAuflistung    | Formatierter Text für eigene Tabellen    | *Eigene Auflistung*                                                                                            |
+Dazu sind [hier](content/acronyms.tex) Akronyme definiert, die für die Arbeit in der data experts nützlich sind.
