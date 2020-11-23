@@ -25,7 +25,7 @@
 	\AtBeginDocument{\setstretch{1.125}}
 
 %% Kopf- und Fußzeile
-\RequirePackage[bottom]{footmisc}
+\RequirePackage[bottom,hang]{footmisc}
 \RequirePackage{fancyhdr}
 	\pagestyle{fancy} % eigener Seitenstil
 	\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
