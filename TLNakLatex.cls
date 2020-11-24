@@ -81,6 +81,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%% CITING %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{footnotehyper} % Make footnotes work properly with hyperlinks
 %Literatur Einstellungen
 \RequirePackage[backend=biber, style=ieee]{biblatex}
 	\ExecuteBibliographyOptions{sorting=nty}
@@ -232,6 +233,7 @@
 
 %%%%%%%%%%%%%%%%%% QOL %%%%%%%%%%%%%%%%%%
 \RequirePackage{enumitem}% Custom Enumerate (z.B. Start mit 0)
+\newcommand{\tabitem}{~~\llap{\textbullet}~~} % A bulletpoint outside of itemize
 
 \newcommand{\labeledDescription}[2]{
 \begin{description}
